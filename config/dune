@@ -1,0 +1,11 @@
+(executable
+ (name discover)
+ (enabled_if (= %{context_name} default))
+ (libraries dune.configurator))
+
+(rule
+ (target xen_bindings_cflags.sxp)
+ (action
+  (with-stdout-to
+   %{target}
+   (run ./discover.exe))))

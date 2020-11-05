@@ -1,0 +1,10 @@
+(lang dune 2.0)
+
+(context
+ (default
+  (targets freestanding)
+  (env (_ (
+   c_flags (:include config/xen_bindings_cflags.sxp)
+  )) 
+  )
+))

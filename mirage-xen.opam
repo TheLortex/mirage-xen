@@ -19,17 +19,16 @@ depends: [
   "lwt" {>= "2.4.3"}
   "shared-memory-ring-lwt"
   "xenstore" {>= "1.2.5"}
-  "conf-pkg-config"
   "lwt-dllist"
   "mirage-profile" {>= "0.3"}
   "io-page" {>= "2.0.0"}
   "mirage-runtime" {>= "3.7.0"}
   "logs"
   "fmt"
-  "ocaml-freestanding" {>= "0.6.2"}
-  "solo5-bindings-xen" {>= "0.6.7"}
   "bheap" {>= "2.0.0"}
   "duration"
+  "solo5-bindings-xen" { with-test } 
+  "ocaml-freestanding" { with-test }
 ]
 available: [
   (arch = "x86_64" ) &
