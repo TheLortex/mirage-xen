@@ -2,7 +2,10 @@
  (name oS)
  (public_name mirage-xen)
  (libraries lwt cstruct xenstore.client shared-memory-ring-lwt lwt-dllist
-   mirage-profile logs io-page fmt mirage-runtime bheap duration))
+   mirage-profile logs io-page fmt mirage-runtime bheap duration)
+ (no_dynlink)
+ (foreign_archives mirage-xen_bindings)
+)
 
 (rule
  (deps
@@ -16,10 +19,8 @@
      (run %{make}))
     (copy bindings/libmirage-xen_bindings.a libmirage-xen_bindings.a)))))
 
-(include_subdirs unqualified)
-
 (install
  (section lib)
  (files
   (bindings/mirage-xen.pc as ../pkgconfig/mirage-xen.pc)
-  (libmirage-xen_bindings.a as libmirage-xen_bindings.a)))
+))
